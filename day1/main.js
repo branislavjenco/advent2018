@@ -1,6 +1,6 @@
 const { openFileToArray } = require("../utils.js");
 
-const input = openFileToArray("input.txt").map(l => parseInt(l, 10));
+const input = openFileToArray("input.txt").map(Number);
 
 const values = input.reduce(
   (acc, curr) => {
