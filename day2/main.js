@@ -1,9 +1,6 @@
-const fs = require("fs");
+const { openFileToArray } = require("../utils.js");
 
-const input = fs
-  .readFileSync("input.txt")
-  .toString()
-  .split("\n");
+const input = openFileToArray("input.txt");
 
 function countLetters(id) {
   let freq = {};

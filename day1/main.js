@@ -1,10 +1,6 @@
-const fs = require("fs");
+const { openFileToArray } = require("../utils.js");
 
-const input = fs
-  .readFileSync("input.txt")
-  .toString()
-  .split("\n")
-  .map(l => parseInt(l, 10));
+const input = openFileToArray("input.txt").map(l => parseInt(l, 10));
 
 const values = input.reduce(
   (acc, curr) => {
