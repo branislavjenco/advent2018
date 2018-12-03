@@ -1,8 +1,5 @@
 const { create2dArray, openFileToArray } = require("../utils.js");
 
-// array of input lines
-const claimStrings = openFileToArray("input.txt");
-
 function part1(claimStrings) {
   let fabric = create2dArray(1000, 1000, 0);
   let claims = [];
@@ -45,6 +42,8 @@ function part2(claims, fabric) {
   }
 }
 
+// array of input lines
+const claimStrings = openFileToArray("input.txt");
 const { claims, fabric, overlaps } = part1(claimStrings);
 console.log("Part 1 solution: ", overlaps);
 console.log("Part 2 solution: ", part2(claims, fabric));
