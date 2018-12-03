@@ -39,6 +39,8 @@ function checksum(input) {
 
 console.log(checksum(input));
 
+// second solution is extremely ugly but I wanted to finish it as fast as possible
+
 function checkArray(arr) {
   let idx;
   let counter = 0;
