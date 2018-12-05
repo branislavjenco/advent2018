@@ -1,20 +1,18 @@
 const { openFileToString } = require("../utils");
 
 const sampleInput = "dabAcCaCBAcCcaDA";
+const sampleResult = "dabCBAcaDA";
 const fileInput = openFileToString("input.txt");
-
-let input = fileInput.split("");
 
 // Determine if two units are opposite polarity
 const isOppositePolarity = (u1, u2) =>
-  u1.toLowerCase() === u2.toLowerCase() && u1 !== u2;
+  Math.abs(u1.charCodeAt() - u2.charCodeAt()) === 32;
 
 /**
  * Solution 1 without having to do multiple passes
  * @param {array} polymer
  */
 function collapsePolymer(polymer) {
-  polymer = [...polymer]; // let's not mutate the argument
   // destructions are done by setting indices to null
   let prevI;
   for (let i = 1; i < polymer.length; i++) {
@@ -41,8 +39,11 @@ function collapsePolymer(polymer) {
   return result;
 }
 
+/**
+ * Solution 2, Returns the shortest polymer
+ * @param {array} polymer
+ */
 function improvedCollapsePolymer(polymer) {
-  polymer = [...polymer]; // don't mutate
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
   let minLength = polymer.length;
@@ -59,5 +60,9 @@ function improvedCollapsePolymer(polymer) {
   return shortestPolymer;
 }
 
-console.log("Solution 1: ", collapsePolymer(input).length);
-console.log("Solution 2: ", improvedCollapsePolymer(input).length);
+const input1 = fileInput.split("");
+
+console.log("Solution 1: ", collapsePolymer(input1).length);
+
+const input2 = fileInput.split("");
+console.log("Solution 2: ", improvedCollapsePolymer(input2).length);
