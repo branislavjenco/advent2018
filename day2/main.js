@@ -1,6 +1,6 @@
 const { openFileToArray } = require("../utils.js");
 
-const input = openFileToArray("input.txt");
+const input = openFileToArray("input_juraj.csv");
 
 function countLetters(id) {
   let freq = {};
