@@ -7,10 +7,12 @@ const create1dArray = (length, fillValue) => Array(length).fill(fillValue);
 
 const openFileToString = filename => fs.readFileSync(filename).toString();
 const openFileToArray = filename => openFileToString(filename).split("\n");
+const range = x => [...Array(x).keys()];
 
 module.exports = {
   create1dArray,
   create2dArray,
   openFileToString,
-  openFileToArray
+  openFileToArray,
+  range
 };
